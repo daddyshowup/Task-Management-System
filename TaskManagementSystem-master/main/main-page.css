@@ -1,0 +1,605 @@
+:root{
+    --main-color:  #0080ff;
+    --background-color: #0080ffcc;
+}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif';
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #ddd;     
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ccc; 
+} 
+/* navbar css starts here */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--main-color);
+    width: 100%;
+    min-height: 50px;
+    padding: 2px 30px;
+}
+nav .icons{
+    font-size: 26px;
+    width: 40px;
+    padding: 5px 8px;
+    margin: 0 2px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+nav .icons:hover{
+    background-color: rgb(255, 255, 255,0.2);
+}
+
+nav .searchbar input, #close-icon{
+    display: none;
+}
+/* nav .searchbar:active{
+    width: 100%;
+    padding: 8px 0px;
+    background-color: white;
+}
+nav .searchbar #search-icon:active{
+    margin: auto 2px;
+    font-size: 20px;
+    width: auto;
+    color: black;
+}
+nav .searchbar input{
+    font-size: 16px;
+    outline: none;
+    border: none;
+    display: none;
+}
+nav .searchbar #close-icon{
+    display: none;
+}
+nav .searchbar input .show{
+    display: inline-block;
+}
+nav .searchbar #close-icon .show{
+    display: inline-block;
+} */
+
+/* navbar css ends here */
+
+.wrapper{
+    display: flex;
+    flex-direction:row;
+    overflow: hidden !important;
+    height: calc(100vh - 50px);
+}
+/* sidebar section css starts here */
+.sidebar{
+    width: 300px;
+    background-color: #eee;
+    padding:15px;
+    overflow-y: auto;
+}
+.sidebar .toggle{
+    display: none;
+}
+.sidebar .sidebar-title{
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+    color: var(--main-color);
+}
+.sidebar .sidebar-title i{
+    font-size: 24px;
+    padding: 0 10px;
+}
+.sidebar ul li{
+    list-style: none;
+    font-size: 18px;
+    border-radius: 8px;
+}
+.sidebar ul li a{
+    display: block;
+    color: black !important;
+}
+.sidebar ul li.active a{
+    color: var(--main-color) !important;
+}
+.sidebar ul li i{
+    padding: 10px 10px;
+    border-radius: 8px;
+}
+.sidebar .bottom{
+    padding-top: 20px;
+}
+.sidebar .bottom ul li i:hover{
+    background-color: #ccc;
+}
+.sidebar ul li.active{
+    background-color: #ddd;
+}
+.sidebar ul li:hover{
+    background-color: #ddd;
+    cursor: pointer;
+}
+.sidebar ul .toggle{
+    display: none;
+    transition: 3s;
+}
+/* sidebar section css ends here */
+
+/* content section css starts here */
+.content{
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.content .head{
+    position: sticky;
+    top: 0;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px !important;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+.content .head .heading span{
+    font-size: 22px;
+    font-weight: 700;
+}
+.content select{
+    padding: 5px;
+    border: 1px solid var(--main-color);
+    width: 120px;
+    height: 35px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    text-align: left;
+}
+.content select:hover, .content .head select:active{
+    background-color: #eee;
+}
+.content select option{
+    color: #999999;
+    font-weight: 500;
+}
+.content select,select option{
+    color: var(--main-color);
+}
+.content .head form .buttons button{
+    width: 40px;
+    height: 33px;
+    margin: 0;
+    padding: 0 3px;
+    font-weight: 500;
+}
+.content .add-task{
+    width: 100%;
+    margin-bottom: 40px;
+}
+.content .add-task .add-task-head{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    color: var(--main-color);
+}
+.content .add-task-head:hover{
+    background-color: #0080ff10;
+}
+.content .add-task .add-task-body{
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    display: none;
+}
+.content .add-task .show{
+    display: inline-block !important;
+}
+.content .add-task-body input,.add-task-body textarea, #editModal input, #editModal textarea, #editModal select{
+    width: 98%;
+    padding: 4px;
+    outline: none;
+    resize: none;
+    border: none;
+    margin: 0 0 5px 5px;
+}
+#editModal input, #editModal textarea, #editModal select{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: black;
+}
+#editModal h4 {
+ padding: 5px 8px;
+ color: gray;
+}
+#editModal input#editDuedate {
+    font-weight: normal;
+}
+.content .add-task-body textarea{
+    resize: none;
+    padding-left: 10px;
+}
+.editModal textarea{
+    resize: none;
+}
+.content .add-task-body input, #editModal input{
+    font-weight: 500;
+    margin-top: 2px;
+}
+.content .add-task-body input{
+    padding-left: 10px;
+}
+.content .add-task-body .buttons, #editModal .buttons, #deleteModal .buttons, .userInfoModal .buttons{
+    margin: 5px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.content .add-task-body .buttons{
+    justify-content: space-between;
+}
+.content .add-task-body .buttons .left-buttons{
+    display: flex;
+    align-items: center;
+    margin: 0 2px 7px 2px;
+}
+.content .add-task-body .buttons .left-buttons input{
+    height: 35px;
+    width: auto;
+    border: 1px solid var(--main-color);
+    padding: 5px;
+    color: var(--main-color);
+    background-color: #fff !important;
+    padding: 0px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    font-weight: 400;
+    margin: 2px;
+}
+.left-buttons input::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+}
+.left-buttons input:before {
+    color: var(--main-color);
+    display: block;
+    font-family: 'FontAwesome';
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    content: '\f073';
+}
+.content select#priority{
+    width: 100px;
+    margin: 0 2px;
+}
+.content select#priority option#first{
+    color: green;
+}
+.content select#priority option#second{
+    color: chartreuse;
+}
+.content select#priority option#third{
+    color:  gold;
+}
+.content select#priority option#fourth{
+    color: #aaa;
+}
+.buttons button{
+    width: 80px;
+    height: 30px;
+    padding: 3px;
+    margin: 0 2px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* .content .add-task-body .buttons #one, #editModal .buttons #one, #deleteModal .buttons #one, .userInfoModal .buttons #one{ */
+.buttons .one{
+    background-color: #ccc;
+}
+.buttons .one:hover{
+    background-color: #ddd;
+}
+.buttons .two{
+    background-color: var(--main-color);
+    color: white;
+}
+.buttons .two:hover{
+    background-color: var(--background-color);
+    color: white;
+}
+.content .tasks{
+    width: 85%;
+}
+.content .tasks .single-task{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    cursor: pointer;
+    min-height: 80px;
+}
+.content .tasks .single-task .todo{
+    display: flex;
+    /* flex-direction: column; */
+}
+.content .tasks .single-task .todo .text{
+    padding: 0 0 10px 5px;
+}
+.content .tasks .single-task .todo span{
+    font-weight: 500;
+    font-size: 18px;
+}
+.content .tasks .single-task .todo .checkbox{
+    padding: 5px;
+    color: gray;
+}
+.content .tasks .single-task .todo i{
+    font-size: 16px;
+}
+.content .tasks .single-task .todo .checkbox i{
+    font-size: 22px;
+    font-weight: 100;
+    width: 18px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+.content .tasks .single-task .todo .checkbox i#first{
+    color: darkgreen;
+    background-color: rgb(0, 128, 0, 0.5);
+}
+.content .tasks .single-task .todo .checkbox i#second{
+    color:  chartreuse;
+    background-color: rgb(127, 255, 0, 0.4);
+}
+.content .tasks .single-task .todo .checkbox i#third{
+    color: gold;
+    background-color: rgb(255, 255, 0, 0.3);
+}
+.content .tasks .single-task .todo .checkbox i#fourth{
+    color: gray;
+    background-color: rgb(128, 128, 128, 0.2);
+}
+.content .tasks .single-task .todo .checkbox
+.content .tasks .single-task .todo .done{
+    color:#aaa;
+    text-decoration: line-through;
+}
+.content .tasks .single-task .icons i{
+    width: 30px;
+    text-align: center;
+    margin: 0 2px;
+    padding: 5px;
+    font-size: 20px;
+    display: flex;
+}
+.content .tasks .single-task .icons i:hover{
+    background-color: #ddd;
+}
+/* modal */
+.modal{
+    overflow: auto;
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+.modal-content{
+    position: fixed;
+    top: 20%;
+    left: 22%;
+    width: 60%;
+    max-height: 65%;
+    overflow-y: scroll;
+    background-color: #fefefe;
+    border-radius: 15px;
+}
+.modal span.modalClose{
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.modal .modalClose:hover,
+.modal .modalClose:focus {
+  color: var(--main-color);
+  cursor: pointer;
+}
+.modal .modal-header{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: 5px 25px;
+    color: black;
+    border-bottom: 1px solid #ccc;
+}
+.modal .modal-body{
+    padding: 2px 18px;
+}
+#deleteModal .modal-body p{
+    padding:25px;
+} 
+.modal .modal-footer{
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    padding: 2px 16px;
+    color: white;
+}
+.userInfoModal p{
+    color: gray;
+    font-size: 14px;
+}
+.userInfoModal .modal-body button{
+    padding: 5px 8px;
+    margin: 4px 0 10px 0;
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    color: var(--main-color);
+    background-color: #eee;
+    cursor: pointer;
+    font-weight: 500;
+}
+.userInfoModal .modal-body button:hover{
+    background-color: #ddd;
+}
+.userInfoModal hr, #editModal hr{
+    margin: 5px 0;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+}
+.userInfoModal input{
+    display: block;
+    width: 60%;
+    margin: 4px 0;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.userInfoModal input:focus{
+    outline: none;
+    border: 1px solid #aaa;
+}
+#deleteAccountModal .modal-body{
+    padding: 60px 18px;
+}
+.img-container {
+    overflow: hidden;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    position: relative;
+    z-index: -10;
+}
+.add-task-image{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: -70px;
+    opacity: 0.5;
+}
+.tittle{
+    text-align: center;
+    color: rgb(255, 0, 0,0.5);
+    font-weight: 500;
+}
+
+/* content section css ends here */
+
+/* responsive */
+@media screen and (max-width: 750px){
+    .sidebar{
+        display: none;
+    }
+    .sidebar .toggle{
+        display: inline-block; 
+    }
+    .modal-content{
+        position: fixed;
+        top: 15%;
+        left: 15%;
+        width: 70%;
+    }
+}
+@media screen and (max-width: 600px){
+    nav .icons{
+        font-size: 22px;
+        width: 35px;
+    }
+    .modal-content{
+        position: fixed;
+        top: 15%;
+        left: 10%;
+        width: 80%;
+    }
+    .content .add-task-body .buttons{
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 500px){
+
+    .img-container {
+        width: 300px;
+        height: 300px;
+    }
+    .tittle{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .content .head{
+        flex-direction: column;
+        height: auto !important;
+        padding: 3px;
+    }
+    .content .head .heading {
+        text-decoration: underline;
+        margin-bottom: 5px;
+    }
+    .content .add-task-body .buttons .left-buttons{
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    .content select#priority{
+        width: 100%;
+        align-items: center;
+        margin: 7px auto 0 auto;
+    }
+
+}
+@media screen and (max-width: 320px){
+    nav .icons{
+        font-size: 18px;
+        width: 28px;
+    }
+    .sidebar{
+        min-width: 180px;
+    }
+    .content{
+        min-width: 280px;
+    }
+    .modal-content{
+        min-width: 220px;
+    }
+}

@@ -1,0 +1,178 @@
+:root{
+    --main-color:  #0080ff;
+    --background-color: #0080ffcc;
+}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.register-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+.register-container .left{
+    width: 40%;
+    height: 100vh;
+    background-color: #f5f7f7;
+}
+.register-container .right{
+    width: 60%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #00c6ff,#0080ff); 
+    overflow: hidden;
+}
+.register-container .left div{
+    padding: 50px 0 0 40px;
+}
+.register-container .left h1{
+    font-size: 40px;
+    font-weight: 500;
+    padding: 50px 40px 0 40px;
+}
+.register-container .left p{
+    color: gray;
+    font-size: 20px;
+    padding: 10px 40px 0 40px;
+}
+.register-container .right form{
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    width: 60%;
+    min-height: 450px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: -2px 3px 2px 1px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.register-container .right form h1{
+    color: var(--main-color);
+}
+.register-container .right form .form-btn{
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500 ;
+    color: white;
+    background-color:var(--main-color);
+    border: none; 
+    border-radius: 6px;
+    margin-top: 5px;
+}
+.register-container .right form p{
+    padding: 10px 0;
+}
+.register-container .right form input{
+    margin: 5px 0;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 5px;
+    outline:none;
+}
+.register-container .right form input:focus{
+    border: 2px solid var(--main-color); 
+}
+.register-container .right form .error{
+    background-color: rgba(255, 192, 203, 0.5);
+    color: red;
+}
+.register-container .right form .error p{
+    padding: 5px 0;
+}
+.register-container .right i{
+    font-size: 300px;
+    position: absolute;
+    opacity: 0.1;
+    animation: rotate 10s linear infinite;
+    color: var(--main-color);
+}
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.register-container .right i:first-child{
+    top: 10px;
+    left: -130px;
+}
+.register-container .right i:last-child{
+    bottom: 10px;
+    right: -130px;
+    animation-direction: reverse;
+}
+.register-container .right i{
+    color: black;
+}
+
+/* responsive */
+@media screen and (max-width:850px) {
+    .btn{
+        height: 35px;
+        width: 110px;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+    .register-container .left{
+        width: 45%;
+        overflow: hidden;
+    }
+    .register-container .right{
+        width: 55%;
+        height: 100vh;
+    }
+    .register-container .left div{
+        padding: 30px 0 0 20px;
+    }
+    .register-container .left h1{
+        font-size: 30px;
+        padding: 30px 20px 0 20px;
+    }
+    .register-container .left p{
+        padding: 10px 20px 0 20px;
+    }
+    .register-container .right form{
+        width: 80%;
+    }
+    .register-container .right form h1{
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .register-container{
+        flex-direction: column;
+        height: auto;
+        min-width: 250px;
+    }
+    .register-container .left{
+        width: 100%;
+        height: auto;
+        padding-bottom: 25px;
+    }
+    .register-container .right{
+        width: 100%;
+        height: auto;
+        padding: 40px 0;
+    }
+    .register-container .right form{
+        padding: 20px;
+        width: 90%;
+        height: 450px;
+    }
+}

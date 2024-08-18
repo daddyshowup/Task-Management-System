@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrganizeU: Today</title>
+    <!-- css file -->
+    <link rel="stylesheet" href="main-page.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="" sizes="96x96">
+    <!-- font aewsome cdn -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="left-icons">
+            <i class="icons fa fa-solid fa-bars"></i>
+            <i class="icons fa fa-solid fa-home"></i>
+            <i class="icons fa fa-solid fa-user"></i>
+        </div>
+        <div class="left-icons">
+            <span class="searchbar">
+                <i id="search-icon" class="icons fa fa-solid fa-search"></i>
+                <input type="text" placeholder="Search">
+                <i id="close-icon" class="icons fa fa-solid fa-close"></i>
+            </span>
+        </div>
+    </nav>
+    
+    <section class="wrapper">
+    <!-- sidebar section starts here -->
+    <section class="sidebar">
+        <div class="top">
+            <div class="sidebar-title">
+                <i class="fa fa-solid fa-angle-down"></i>
+                <h3>Shortcuts</h3>
+            </div>
+            <ul>
+                <li>
+                    <i class="fa fa-solid fa-inbox"></i>
+                    <span>Inbox</span>
+                </li>
+                <li class="active">
+                    <i class="fa fa-solid fa-clock-o"></i>
+                    <span>Today</span>
+                </li>
+                <li>
+                    <i class="fa fa-solid fa-exclamation-triangle"></i>
+                    <span>Overdue</span>
+                </li>
+                <li>
+                    <i class="fa fa-solid fa-calendar"></i>
+                    <span>Upcoming</span>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <div class="sidebar-title">
+                <i class="fa fa-solid fa-angle-down"></i>
+                <h3>Lists</h3>
+            </div>
+            <ul>
+                <li>
+                    <i class="fa fa-solid fa-ellipsis-h"></i>
+                    <span>Personal</span>
+                </li>
+                <li>
+                    <i class="fa fa-solid fa-ellipsis-h"></i>
+                    <span>Work</span>
+                </li>
+                <li>
+                    <i class="fa fa-solid fa-ellipsis-h"></i>
+                    <span>Education</span>
+                </li>
+                <li>
+                    <i class="fa fa-solid fa-ellipsis-h"></i>
+                    <span>Grocery</span>
+                </li>
+                <li>
+                    <i class="fa fa-solid fa-ellipsis-h"></i>
+                    <span>Shopping</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- sidebar section ends here -->
+
+    <!-- today content section starts here -->
+    <section class="content">
+        <div class="head">
+            <div class="heading">
+                <span>Today</span>
+                <small></small>
+            </div>
+            <div class="sort">
+                <i class="fa fa-solid fa-sort-amount-desc"></i>
+                <small>Sort By</small>
+            </div>
+        </div>
+        <div class="tasks">
+            <div class="single-task">
+                <div class="todo">
+                    <div class="checkbox">
+                        <i class="fa fa-solid fa-circle-thin"></i>
+                    </div>
+                    <div class="text">
+                        <span class="task-name">task name </span>
+                        <p class="task-desc">task desription</p>
+                    </div>
+                </div>
+                <div class="icons">
+                    <i class="fa fa-solid fa-edit"></i>
+                    <i class="fa fa-solid fa-trash"></i>
+                </div>
+            </div>
+            <div class="single-task">
+                <div class="todo">
+                    <div class="checkbox">
+                        <i class="fa fa-solid fa-circle-thin"></i>
+                    </div>
+                    <div class="text">
+                        <span class="task-name">task name task name task name task name task name task name task
+                            name task name task name task name task name task name task name task name task name
+                            task name </span>
+                        <p class="task-desc">task desription task desription task desription task desription
+                            desription task desription task desription task desription task desription task
+                            desription task desription task desription task desription task desription task                                desription task desription task desription task desription task desription Task
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="icons">
+                    <i class="fa fa-solid fa-edit"></i>
+                    <i class="fa fa-solid fa-trash"></i>
+                </div>
+            </div>
+            <form class="add-task"  action="savedata.php" method="post">
+                <div class="add-task-head">
+                    <i class="fa fa-light fa-plus"></i>
+                    <span>Add Task</span>
+                </div>
+                <div class="add-task-body">
+                    <input type="text" name="sno" hidden>
+                    <input type="text" placeholder="Task Name" name="task-name" >
+                    <textarea name="task-desc" id="" cols="30" rows="3" placeholder="Task Description"></textarea>
+                    <div class="buttons">
+                        <button type="reset" id="one" name="cancelbtn" >cancel</button>
+                        <button type="submit" id="two" name="addbtn" >Add Task</button>
+                    </div>
+                </div>
+            </form>
+            <!-- Edit Modal -->
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="modalClose">&times;</span>
+                        <h2>Edit Task</h2>
+                    </div>
+                    <form action="">
+                        <div class="modal-body">
+                            <input type="text" placeholder="Task Name">
+                            <textarea name="" id="" cols="30" rows="3" placeholder="Task Description"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="buttons">
+                                <button id="one">cancel</button>
+                                <button id="two">Edit Task</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Delete Modal -->
+            <div id="deleteModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="modalClose">&times;</span>
+                        <h2>Delete Task?</h2>
+                    </div>
+                    <form action="">
+                        <div class="modal-body">
+                            <p>Are you sure you want to delete this task?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="buttons">
+                                <button id="one">cancel</button>
+                                <button id="two"> Yes! </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- today content section ends here -->
+    </section>
+
+    <!-- js file -->
+    <script src="main-page.js"></script>
+</body>
+
+</html>

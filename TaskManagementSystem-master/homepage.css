@@ -1,0 +1,497 @@
+:root{
+    --main-color:  #0080ff;
+    --background-color: #0080ffcc;
+}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.icons{
+    font-size: 80px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid#0080ff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 25px !important;
+    padding-top: 5px;
+    cursor: pointer;
+}
+.btn{
+    height: 45px;
+    width: 130px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500 ;
+    color: white;
+    background-color:var(--main-color);
+    border: none; 
+    border-radius: 6px;
+}
+.btn:hover{
+background-color:var(--background-color);    
+}
+
+/* navbar css starts here */
+nav{
+    width: 100%;
+    background-color: #f5f7f7;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:center;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+nav a img{
+    margin-top: 10px;
+    width: 160px;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 55%;
+}
+nav ul li{
+    font-size: 22px;
+    padding: 15px 20px 0 20px;
+}
+nav ul li a{
+    color: black;
+}
+nav ul li a:hover{
+    color: var(--main-color);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+nav button{
+    margin-right: 30px;
+}
+nav div i{
+    display: none !important;
+    position: absolute;
+    top: 20px;
+    right: 0px;  
+}
+/* navbar css ends here  */
+
+/* header css starts here */
+header, .why-OU, .contact{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+header .left-container{
+    width: 60%;
+    padding: 100px 10px 10px 100px;
+}
+header .right-container, .why-OU .left-container{
+    width: 40%;
+    margin: auto;
+    margin-top: 5px;
+}
+header .left-container h1, .why-OU .right-container h1{
+    font-size: 44px;
+}
+header .left-container p, .why-OU .right-container p, .banner p{
+    font-size: 20px;
+    padding: 20px 0;
+}
+header .right-container img, .why-OU .left-container img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+/* header css ends here */
+
+/* why-OU section css starts here*/
+section{
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.why-OU{
+    border-radius: 40px;
+}
+.why-OU, .banner, .contact{
+    background-color: #eef6ff;
+    box-shadow: -1px 1px 10px 2px #bddcff inset;
+}
+.why-OU .left-container{
+    margin: auto;
+    padding: 10px;
+}
+.why-OU .right-container{
+    width:50%;
+    padding: 60px 25px 10px 0;
+}
+.why-OU .right-container ul{
+    padding-left: 30px;
+    font-size: 20px;
+}
+/* why-OU section css ends here*/
+
+/* about section css starts here */
+.about h1, .banner h1, .FAQ h1, .contact h1{
+    text-align: center;
+    padding: 0 10px;
+    font-size: 35px;
+}
+.about span{
+    display: block;
+    text-align: center;
+    color: #ccc;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 40px;
+}
+.about .container{
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about .container .box, .FAQ .container .box{
+    width: 49%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px 0 10px 25px;
+    border: 1px solid #0080ff48;
+    box-shadow: -1px 1px 10px 2px #bddcff6c inset;
+}
+.about .container .box img{
+    height: 80px;
+    width: 100px;
+    object-fit: contain;
+}
+/* about section css ends here */
+
+/* banner section css starts here */
+.banner{
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+.banner img{
+    width: 40%;
+}
+.banner div i{
+    font-size: 300px;
+    position: absolute;
+    opacity: 0.1;
+    animation: rotate 10s linear infinite;
+    color: var(--main-color);
+}
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.banner div i:first-child{
+    top: 10px;
+    left: -130px;
+}
+.banner div i:last-child{
+    bottom: 10px;
+    right: -130px;
+    animation-direction: reverse;
+}
+/* banner section css ends here */
+
+/*  FAQ section css starts here  */
+.FAQ h1{
+    padding: 50px 0 20px 0;
+}
+.FAQ .container{
+    width: 70%;
+    margin: auto;
+}
+.FAQ .container .box{
+    width: 100%;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.FAQ .container .box:hover{
+    border-color: var(--main-color);
+}
+.FAQ .container .box .question{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 40px;
+}
+.FAQ .container .box .answer{
+    padding: 10px 45px;
+    font-size: 18px;
+    display: none;
+}
+.FAQ .container .box .question h3{
+    font-size: 28px;
+    font-weight: normal;
+    color: rgb(100, 100, 100);
+}
+.FAQ .container .box .question i{
+    border: none;
+    padding-top: 8px;
+    color: #ccc;
+}
+/*  FAQ section css ends here  */
+
+/*  Contact section css starts here  */
+.contact .left-container{
+    margin: auto;
+    width: 40%;
+    text-align: center;
+}
+.contact .right-container{
+    margin: auto;
+    width:45%;
+    padding: 25px 0;
+}
+.contact .right-container form{
+    border: 2px solid #0080ff48;
+    background-color: #fff;
+    padding: 10px;
+}
+.contact .right-container form input:focus, textarea:focus{
+    outline-color: #0080ff69 !important;
+}
+.contact .right-container .inputBox{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 40px;
+    margin: 10px auto;
+}
+.contact .right-container .inputBox input{
+    width: 48%;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-color: #0080ff48 !important;
+}
+.contact .right-container form textarea, .contact .right-container form textarea button{
+    display: block;
+    margin: 10px auto;
+    font-size: 20px;
+    border-color: #0080ff48 !important;
+}
+.contact .right-container form textarea{
+    width: 97%;
+    resize: none;
+    padding: 6px 10px;
+    overflow: auto;
+}
+.contact .right-container form button{
+    margin-left: 6px;
+}
+.contact .left-container .slogan{
+    margin: 40px auto;
+}
+.contact .left-container .slogan h3{
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--background-color);
+}
+.contact .left-container p{
+    font-size: 18px;
+    color:gray;
+}
+/*  Contact section css ends here  */
+
+/* footer section starts here */
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 40px;
+    background-color: #f5f7f7;
+}
+footer div{
+    text-align: center;
+    margin: 10px 60px;
+    width: 130px;
+    font-size: 18px;
+    color:rgba(0, 0, 0, 0.8);
+}
+footer div h3{
+    font-size: 25px;
+    padding-bottom: 3px;
+}
+footer div:first-child{
+    text-align: left;
+    width: 400px;
+}
+footer div ul li{
+    list-style: none;
+    padding: 3px;
+}
+footer div ul li a{
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+footer div ul li a:hover{
+    text-decoration: underline;
+    color: var(--main-color);
+    font-size: 20px;
+}
+.credit{
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f5f7f7;
+}
+/* footer section ends here */
+
+/* responsive */
+@media screen and (max-width:850px) {
+    nav ul li{
+        font-size: 20px;
+        padding: 15px 10px 0 10px;
+        justify-content: center;
+    }
+    .btn{
+        height: 35px;
+        width: 110px;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+    header .left-container{
+        width: 50%;
+        padding: 50px 10px 10px 50px;
+    }
+    header .right-container, .why-OU .left-container{
+        width: 50%;
+        margin: auto;
+    }
+    header .left-container h1, .why-OU .right-container h1{
+        font-size: 30px;
+    }
+    header .left-container p, .why-OU .right-container p{
+        font-size: 18px;
+        padding: 10px 0;
+    }
+    .banner img{
+        width: 60%;
+    }
+    .FAQ .container{
+        width: 80%;
+    }
+    .contact .right-container{
+        width: 60%;
+    }
+    .contact .left-container{
+        width: 40%;
+    }
+    footer div:first-child{
+        width: 350px;
+    }
+    footer div {
+        width: 100px;
+    }
+}
+   
+@media screen and (max-width:600px) {
+    nav button{
+        display: none;
+    }
+    nav div i{
+        display: inline-block !important;
+    }
+    nav div ul{
+        position: absolute;
+        top: 80px;
+        left:0;
+        right: 0;
+        width: 100vw;
+        background:#f5f7f7;
+        text-align: center;
+        flex-direction: column;
+        transition: 1s;
+        height: 0;
+        overflow: hidden;
+    }
+    nav div ul li{
+        line-height: 30px;
+        margin: 7px;
+        font-size: 26px;
+        opacity: 0;
+        padding: 10px 0;
+    }
+    nav div ul li:first-child{
+        padding-top: 50px;
+    }
+    nav div ul.active{
+        height: 400px;
+        background-color: #eeeeee;
+    }
+    nav div ul.active li{
+        opacity: 1;
+    }
+    header, .why-OU{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    header .left-container, .why-OU .right-container, .contact .right-container{
+        width: 100%;
+        padding: 40px 20px;
+    }
+    header .right-container, .why-OU .left-container, .contact .left-container{
+        width: 100%;
+        margin-top: 10px;
+    }
+    header .right-container img, .why-OU .left-container img{
+        width: 90%;
+        height: auto;
+        object-fit: contain;
+    }
+    .why-OU .right-container ul li{
+        text-align: left;
+        margin: auto;
+    }
+    .why-OU .left-container{
+        margin-top: 0;
+    }
+    .why-OU .right-container{
+        margin-bottom: 0;
+    }
+    .about .container .box{
+        width: 100%;
+    }
+    .banner h1{
+        font-size: 30px;
+    }
+    .banner img{
+        width: 70%;
+    }
+    .FAQ .container{
+        width: 90%;
+    }
+    .FAQ .container .box .question{
+        font-size: 30px;
+        padding: 0;
+    }
+    .FAQ .container .box .answer{
+        font-size: 16px;
+        padding: 0;
+        padding-right: 20px;
+    }
+    .contact{
+        flex-direction: column;
+    }
+    footer div:first-child{
+        width: 450px;
+    }
+    footer div {
+        width: 100px;
+    }
+}
